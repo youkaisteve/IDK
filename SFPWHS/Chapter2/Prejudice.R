@@ -1,0 +1,10 @@
+setwd("E:/Git/R/IDK/SFPWHS/Chapter2")
+prejudice <- read.csv("Prejudice.csv",header = FALSE,fill = TRUE)
+#prejudice is a list,transfer it to a vector
+preVector <- do.call(c,prejudice)
+cat("mean-")
+cat(mean(preVector))
+cat("\nmedian-")
+cat(median(preVector))
+cat("\nmode-")
+cat(sort(table(preVector)))
