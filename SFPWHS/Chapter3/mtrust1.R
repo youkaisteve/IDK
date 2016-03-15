@@ -5,7 +5,9 @@ blueprint <- function(img,rows,cols,weight){
   lrow <- length(rows)
   lcol <- length(cols)
   newImg <- img
+  #create a random matrix,values are during 0 and 1
   randomnoise <- matrix(nrow = lrow,ncol = lcol,runif(lrow*lcol))
+  #noisy the certain area of newImg's grey values
   newImg@grey[rows,cols] <- (1-weight) * img@grey[rows,cols] + weight * randomnoise
   return(newImg)
 }
